@@ -233,4 +233,9 @@ Now that our model is trained, I’d like you to press the Get button to export 
 Tip: If you want to try training again – perhaps to experiment with the various algorithms available to us – right-click on your model source in the left-hand window, then select Duplicate.
 
 
+DAY 27
 
+
+Today we’re going to build our project, combining both SwiftUI and Core ML in remarkably few lines of code – I think you’ll be impressed.
+
+What I hope you’ll get from this project – apart from all the SwiftUI goodies, of course – is just a little glimpse into the wider world of app development. Core ML is just one of Apple’s powerhouse frameworks, and there are over a dozen more: ARKit, Core Graphics, Core Image, MapKit, WebKit, and more, are all waiting to be discovered when you’re ready.
