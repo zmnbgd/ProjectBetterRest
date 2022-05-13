@@ -244,4 +244,9 @@ Today you have three topics to work through, and you’ll get busy implementing 
 
 
 
+Connecting SwiftUI to Core ML
+
+
+
+
 
