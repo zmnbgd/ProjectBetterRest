@@ -239,3 +239,9 @@ DAY 27
 Today we’re going to build our project, combining both SwiftUI and Core ML in remarkably few lines of code – I think you’ll be impressed.
 
 What I hope you’ll get from this project – apart from all the SwiftUI goodies, of course – is just a little glimpse into the wider world of app development. Core ML is just one of Apple’s powerhouse frameworks, and there are over a dozen more: ARKit, Core Graphics, Core Image, MapKit, WebKit, and more, are all waiting to be discovered when you’re ready.
+
+Today you have three topics to work through, and you’ll get busy implementing Stepper, DatePicker, DateFormatter, and more in a real app.
+
+
+
+
