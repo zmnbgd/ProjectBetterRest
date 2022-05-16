@@ -29,13 +29,16 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
-                //MARK: Challenge 1. Replace each VStack in our form with a Section, where the text view is the title of the section. Do you prefer this layout or the VStack layout? It’s your app – you choose!
-                //MARK Challendge 1. I changed it only for the first section, for other sections I changed it differently because I didn't like the UI
-                Section(header: Text("When do you want to wake up").font(.headline)) {
+//MARK: Challenge 1. Replace each VStack in our form with a Section, where the text view is the title of the section. Do you prefer this layout or the VStack layout? It’s your app – you choose!
+                
+//MARK Challendge 1. I changed it only for the first section, for other sections I changed it differently because I didn't like the UI
+                
+                Section(header: Text("When do you want to wake up")) {
     
                     DatePicker("Plese enter the time", selection: $wakeUp, displayedComponents: .hourAndMinute)
                         .labelsHidden()
                 }
+                
                 Section {
                     VStack(alignment: .leading, spacing: 0) {
                     Text("Desire amount of sleep")
@@ -46,13 +49,21 @@ struct ContentView: View {
                 } header: {
                     Text("Select sleep time")
                 }
+                
                 Section {
-                    VStack(alignment: .leading, spacing: 0) {
-                    Text("Daily coffee intake")
-                        .font(.headline)
+//                    VStack(alignment: .leading, spacing: 0) {
+//                    Text("Daily coffee intake")
+//                        .font(.headline)
+//
+//              Stepper(coffeAmount == 1 ? "1 cup" : "\(coffeAmount) cups", value: $coffeAmount, in: 1...10)
                     
-              Stepper(coffeAmount == 1 ? "1 cup" : "\(coffeAmount) cups", value: $coffeAmount, in: 1...10)
-                        
+                    
+//MARK: Challenge 2. Replace the “Number of cups” stepper with a Picker showing the same range of values.
+                    
+                    Picker("Daily coffee intake", selection: $coffeAmount) {
+                        ForEach(1..<11) {
+                            Text("\($0) cup")
+                        }
                     }
                 } header: {
                     Text("How much you drink coffee")
