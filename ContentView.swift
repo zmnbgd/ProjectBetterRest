@@ -29,24 +29,39 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
-                VStack(alignment: .leading, spacing: 0) {
-                Text("When do you want to wake up")
-                    .font(.headline)
-                
-                DatePicker("Plese enter the time", selection: $wakeUp, displayedComponents: .hourAndMinute)
-                    .labelsHidden()
+                //MARK: Challenge 1. Replace each VStack in our form with a Section, where the text view is the title of the section. Do you prefer this layout or the VStack layout? It’s your app – you choose!
+                //MARK Challendge 1. I did challengde only for the first section, for the others I modified it because I didn't like the UI
+                Section(header: Text("When do you want to wake up").font(.headline)) {
+    
+                    DatePicker("Plese enter the time", selection: $wakeUp, displayedComponents: .hourAndMinute)
+                        .labelsHidden()
                 }
-                VStack(alignment: .leading, spacing: 0) {
-                Text("Desire amount of sleep")
-                    .font(.headline)
-                
-                Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
+                Section {
+                    VStack(alignment: .leading, spacing: 0) {
+                    Text("Desire amount of sleep")
+                        .font(.headline)
+                    
+                    Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
+                    }
+                } header: {
+                    Text("Select sleep time")
                 }
-                VStack(alignment: .leading, spacing: 0) {
-                Text("Daily coffee intake")
-                    .font(.headline)
-                
-                Stepper(coffeAmount == 1 ? "1 cup" : "\(coffeAmount) cups", value: $coffeAmount, in: 1...10)
+                Section {
+                    VStack(alignment: .leading, spacing: 0) {
+                    Text("Daily coffee intake")
+                        .font(.headline)
+                    
+//                    Stepper(coffeAmount == 1 ? "1 cup" : "\(coffeAmount) cups", value: $coffeAmount, in: 1...10)
+                        
+                        Picker("coffeAmount", selection: $coffeAmount) {
+                            ForEach(1..<11) {_ in
+                                Text("\(coffeAmount) coffee cup")
+                            }
+                        }
+                        .pickerStyle(.inline)
+                    }
+                } header: {
+                    Text("How much you drink coffee")
                 }
             }
             .navigationTitle("BetterRest")
